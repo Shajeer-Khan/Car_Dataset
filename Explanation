@@ -1,0 +1,79 @@
+####    AT FIRST DATASET    ####
+
+1. Data Preparation
+Loading the Dataset: The data have been loaded into a Pandas DataFrame.
+Feature Selection: Features were selected as independent variables (X), and the dependent variable (likely engine RPM) was chosen as y.
+Data Splitting: The data was split into training and testing sets using train_test_split, with a specific test size (often 20-30%) and a random state for reproducibility.
+
+2. Model Implementation
+The following regression models were implemented:
+
+Linear Regression:
+The linear regression model was fitted to the training data (X_train and y_train).
+Predictions were made on the testing data (X_test).
+
+Random Forest Regression:
+A random forest model was built using multiple decision trees.
+The model’s predictions were generated, and results were stored for comparison.
+
+3. Model Evaluation
+Performance Metrics: Metrics such as Mean Squared Error (MSE) were calculated for each model. These metrics help assess the accuracy and consistency of the predictions.
+Comparison: The models compared based on the above metrics to determine which one performed best.
+
+4. Visualization
+Scatter plots were generated to compare actual vs. predicted values for each model.
+A line representing perfect predictions (diagonal line) was plotted to visualize deviations in predictions.
+A grid and legend were included for better interpretation.
+
+####    AT SECOND DATASET    ####
+
+1. Dataset Loading and Exploration
+Loaded the dataset using pandas to analyze its structure.
+Checked for missing values and understood column types.
+Identified potential target and feature columns for analysis.
+Purpose: This helps understand the structure of the dataset, identify columns with missing data, and get a first look at the content.
+
+2. Data Cleaning and Preprocessing
+Dropped columns with too many missing values:
+Threshold: Columns with more than 50% missing values were removed.
+Imputed missing values:
+Remaining missing values were filled with the mean of each column.
+Removed non-informative columns:
+Columns like IDs, timestamps, and constant columns with no variation were dropped.
+Purpose: Cleaning the data ensures that the dataset is ready for analysis, with no significant missing or irrelevant values.
+
+3. Exploratory Data Analysis (EDA)
+Correlation Heatmap:
+Plotted a heatmap to analyze how features correlate with each other and with the target variable.
+Scatter Plot Check:
+We created scatter plots to visualize relationships between individual features and the target variable.
+Purpose:
+The heatmap identifies features that are strongly correlated with the target.
+Scatter plots help to check the relationship type (linear/non-linear), which informs model choice.
+
+4. Feature and Target Selection
+Selected the target column (vehicle_speed in this case).
+Defined the remaining columns as features.
+Purpose: This step sets up the data for training the machine learning model.
+
+5. Train-Test Split
+Split the dataset into training and testing sets.
+Used an 80-20 split: 80% for training, 20% for testing.
+Purpose: Splitting ensures that the model is trained on one subset of data and tested on another unseen subset to check performance.
+
+6. Model Training: Random Forest
+Trained a Random Forest Regressor model, a robust machine learning algorithm suitable for non-linear and complex relationships.
+Why Random Forest?:
+Random Forest handles non-linearity, missing values, and feature interactions well.
+It reduces overfitting by averaging multiple decision trees.
+
+7. Model Prediction and Evaluation
+Predicted the target variable on the test set.
+Calculated Mean Squared Error (MSE) to measure model performance.
+Purpose: MSE is a standard metric to evaluate regression models. A lower MSE indicates better predictions.
+
+8. Actual vs Predicted Scatter Plot
+Plotted a scatter plot of actual vs predicted values with a red line showing "perfect predictions."
+Purpose:
+The closer the points are to the red line, the better the model's predictions.
+This plot visually evaluates the model's accuracy.
