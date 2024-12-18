@@ -1,0 +1,48 @@
+####    AT THIRD DATASET    ####
+
+1. Data Cleaning
+Handling Missing Values:
+Columns with more than 50% missing values were identified and dropped.
+Remaining missing values in numerical columns were filled with the column's mean.
+Dropping Irrelevant Columns:
+Columns such as bulk_id, car_reg_no, time_stamp, latitude, and longitude were deemed irrelevant and removed from the dataset.
+
+2. Exploratory Data Analysis (EDA)
+Correlation Heatmap:
+A heatmap of the correlation matrix was generated to visualize relationships between numerical variables.
+Distribution Plots:
+Histograms were created for key numerical features: vehicle_speed, engine_rpm, calculated_engine_load, and mass_air_flow_rate.
+Scatter Plots:
+Relationships between vehicle_speed and other key features were analyzed through scatter plots.
+
+3. Feature Selection
+The target variable was identified as vehicle_speed.
+Remaining columns were used as features.
+
+4. Data Splitting
+The data was split into training and testing sets (80% training, 20% testing) using train_test_split.
+
+5. Data Standardization
+Features were standardized using StandardScaler to improve model performance.
+
+6. Model Training
+Linear Regression Model:
+Trained using the standardized training data.
+Performance was evaluated using RMSE (Root Mean Squared Error) and R² score.
+
+Random Forest Regressor:
+Trained as an alternative model to compare results with Linear Regression.
+Similar performance metrics (RMSE and R² score) were calculated.
+
+7. Model Evaluation
+Linear Regression Results:
+RMSE: 11.639
+R² Score: 0.573
+Accuracy: 57.29%
+
+Random Forest Results:
+RMSE: 7.227
+R² Score: 0.835
+Accuracy: 83.53%
+Visualization:
+Scatter plots of actual vs. predicted vehicle_speed were created for both models.
