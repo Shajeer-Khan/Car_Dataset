@@ -177,3 +177,100 @@ Highlighted the ideal fit line.
 Visualized the importance of each feature in the prediction model.
 Identified critical predictors like throttle position and engine load.
 
+####    AT FIFTH DATASET    ####
+
+1. Data Preparation and Exploration
+Dataset Overview: A dataset with 44,252 entries and 41 columns was loaded and inspected for structure and content.
+
+Handling Missing Data:
+Identified a significant number of missing values in various columns using a heatmap visualization.
+Dropped irrelevant or fully-null columns (e.g., distance, o_s1_b1_voltage).
+Imputed missing numerical values using column means.
+
+Feature Distribution:
+Histograms and pairplots were used to explore the distribution of key variables like vehicle_speed, engine_rpm, and throttle_position.
+
+2. Feature Engineering
+Datetime Conversion: The time_stamp column was converted to datetime format for time-series analysis.
+Scaling Features: All numerical features were standardized using StandardScaler to prepare for machine learning models.
+
+3. Data Visualization
+Visualized key trends, such as:
+Vehicle Speed Distribution: Histogram to show how speeds are distributed.
+Vehicle Speed Over Time: Line plot illustrating speed variations across timestamps.
+Feature Relationships: Pairplots and scatterplots to identify correlations between variables.
+
+4. Machine Learning Modeling
+Two models were built to predict vehicle speed:
+
+Linear Regression:
+Performance:
+Training Root Mean Squared Error (RMSE): ~12.37
+Testing RMSE: ~12.52
+R² on Test Set: ~0.55
+Observations: Moderate prediction accuracy, limited ability to capture non-linear relationships.
+
+Random Forest Regressor:
+Performance:
+Training RMSE: ~2.86
+Testing RMSE: ~7.77
+R² on Test Set: ~0.83
+Observations: Significantly better results due to its ability to model complex non-linear relationships.
+
+5. Feature Importance
+Determined the top contributing features to vehicle speed predictions using the Random Forest model.
+
+Key Features:
+engine_rpm
+calculated_engine_load
+throttle_position
+
+6. Evaluation
+Model Comparisons:
+Linear Regression performed adequately for simpler patterns but was outperformed by the Random Forest model in terms of accuracy and generalization.
+Actual vs. Predicted: Scatterplot of predicted vs. actual values for Random Forest showed strong alignment, highlighting its robustness.
+
+####    AT SIXTH DATASET    ####
+
+1. Data Loading and Inspection
+Dataset: A CSV file containing vehicle telemetry data was loaded.
+
+Preview: The first few rows of the dataset were displayed to understand the structure of the data.
+Shape: The dataset has 35,118 rows and 41 columns.
+
+Data Types and Missing Values:
+Some columns had missing or zero values.
+Columns like distance, commanded_exhaust_gas_recirculation, and fuel_rail_pressure were completely null.
+
+2. Data Cleaning
+Irrelevant Columns: Columns such as bulk_id, car_reg_no, time_stamp, latitude, and longitude were dropped as they are not relevant for analysis.
+
+Handling Missing Values:
+Missing values were replaced with column-wise means using data.fillna(data.mean()).
+A heatmap was plotted to visualize the missing values distribution.
+
+3. Exploratory Data Analysis (EDA)
+Summary Statistics: Generated for all numerical columns to understand their distribution (mean, standard deviation, min, max, etc.).
+
+Correlation Analysis:
+A correlation heatmap was plotted to identify relationships between features.
+This helps in identifying significant predictors for vehicle speed.
+
+Feature Distribution:
+A histogram of vehicle_speed showed its distribution.
+
+Pairplot:
+Key features (vehicle_speed, heading, distance, altitude) were visualized using pair plots to examine relationships and patterns.
+
+4. Data Preprocessing
+Feature Selection:
+The target variable was vehicle_speed.
+Other columns served as predictor variables.
+
+Train-Test Split:
+The dataset was split into training (80%) and testing (20%) sets.
+
+5. Model Training
+Random Forest Regressor:
+A Random Forest Regressor model was trained to predict vehicle speed using the selected features.
+The random_state parameter ensured reproducibility.
