@@ -46,3 +46,56 @@ R² Score: 0.835
 Accuracy: 83.53%
 Visualization:
 Scatter plots of actual vs. predicted vehicle_speed were created for both models.
+
+####    AT FOURTH DATASET    ####
+
+1. Data Overview
+Explored the dataset with .head(), .info(), and .describe() to understand its structure, including 41 columns and 31,671 rows.
+
+2. Missing Data Analysis
+Identified columns with a significant amount of missing values.
+Dropped columns with more than 50% missing data and imputed missing values in the remaining columns with their mean for numerical features.
+
+3. Data Cleaning
+Removed irrelevant columns like bulk_id, car_reg_no, and time_stamp.
+
+4. Exploratory Data Analysis (EDA):
+a. Feature Distribution
+Visualized the distributions of various features using histograms to understand their spread.
+
+b. Correlation Analysis
+Computed and visualized the correlation matrix to identify relationships among variables.
+
+5. Predictive Modeling:
+a. Target and Features
+Defined the target variable (vehicle_speed) and independent features.
+
+b. Data Splitting
+Split the data into training and testing sets (80% training and 20% testing).
+
+c. Feature Scaling
+Standardized the features using StandardScaler for better performance in machine learning models.
+
+d. Model Training
+Used a RandomForestRegressor to predict vehicle speed.
+Trained the model with 100 estimators and a random state of 0.
+
+5. Model Evaluation:
+a. Predictions
+Predicted the vehicle speed on the test set.
+
+b. Performance Metrics
+Evaluated the model using:
+Root Mean Squared Error (RMSE): 7.80
+R-squared (R²): 0.8013 (80.13% of variance explained).
+
+c. Visual Analysis
+Compared actual vs. predicted values with scatter plots.
+Highlighted the ideal fit line.
+
+6. Feature Importance:
+Visualized the importance of each feature in the prediction model.
+Identified critical predictors like throttle position and engine load.
+
+
+
